@@ -75,7 +75,7 @@
                                 {{-- als da ni geaccpteerd is dan dan kan je da accpeteren en decline en de status moet gekregen zijn zodat allen de persoon die dat gekregen heeft kan accpeteren en decline --}}
                                     <td>
                                         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                            // de id verwijst naar welke id de ontvanger
+                                            {{-- // de id verwijst naar welke id de ontvanger --}}
                                             <a href="{{ route('friends.accept', ['id' => $friend->ontvanger_id]) }}">Accept</a>
                                         </button>
                                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
