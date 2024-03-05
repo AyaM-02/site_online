@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="pt-3">
                                     @auth
-                                        {{-- // betekent het dat je pas delete en edit kan doen als de id gelijk is aan de gameId? --}}
+                                    
                                         @if (auth()->user()->id === $game->user_id)
                                             <form action="{{ route('games.delete', $game->id) }}" method="post">
                                                 @csrf

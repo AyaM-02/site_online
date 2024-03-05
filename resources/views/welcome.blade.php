@@ -31,8 +31,6 @@
                 </div>
             @endif
 
-                form action="{{ route('games.data') }}" method="post" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2"
-
 
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
