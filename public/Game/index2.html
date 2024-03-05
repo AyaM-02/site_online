@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script2.js" defer></script>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="selections">
+    <button class="selection" data-selection="rock">✊🏼</button>
+    <button class="selection" data-selection="paper">✋🏼</button>
+    <button class="selection" data-selection="scissors">✌🏼</button>
+</div>
+<div id="time"></div>
+<div id="scoreMessage"></div>
+<div class="result">
+    <div> 
+        You
+        <span class="result-score" data-your-score>0</span>
+    </div>
+    <div data-final-column> 
+        Computer
+        <span class="result-score" data-computer-score>0</span>
+    </div>
+
+    <!-- <div class="result-selection winner">✊🏼</div>
+    <div class="result-selection">✌🏼</div> -->
+
+    <script type="text/javascript">
+     let endpoint = 'http://localhost:8000/api/user_data/1?token=0282ff7a7e3d4eb9f5f023991a033a61';
+
+fetch(endpoint)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(jsonResponse => {
+        console.log("Successful request");
+        
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+    </script>
+</div>
+</body>
+</html>
