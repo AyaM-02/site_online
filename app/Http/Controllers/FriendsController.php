@@ -22,16 +22,13 @@ class FriendsController extends Controller
         $friend->user_sender_id = Auth::id();
         $friend->ontvanger_id = $id;
         $friend->status = "verzonden";
-        //carbon tijd is voor de tijd en datum van nu te krijgen
         $friend->date_accepted = Carbon::now();
         $friend->save();
 
-        //reciver
         $friend2 = new Friend;
         $friend2->user_sender_id =  $id;
         $friend2->ontvanger_id =Auth::id();
         $friend2->status = "gekregen";
-        //carbon tijd is voor de tijd en datum van nu te krijgen
         $friend2->date_accepted = Carbon::now();
         $friend2->save();
 
@@ -42,7 +39,6 @@ class FriendsController extends Controller
         
         Friend::where('user_sender_id', Auth::id())
         ->where('ontvanger_id', $id)
-        //status veranderd van bv verzonden naar  accpeter
         ->update(['status' => 'accepted']);
 
         Friend::where('ontvanger_id', Auth::id())
