@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('body')
-{{-- // eerst ga je naar de edit en als je iets edit in de edit blade ga je via de route naar de update methode --}}
 <form action="{{ route('games.update', $game->id )}} " method="post" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2">
     @csrf
         <div class="mb-4">
