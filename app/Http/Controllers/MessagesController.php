@@ -8,7 +8,7 @@ use App\Models\Message;
 class MessagesController extends Controller
 {
     public function index($receiver){
-        //
+        
         $verzonden = message::where('user_sender_id',Auth::id())->where('user_receiver_id',$receiver)->get();
 
         $ontvangen = message::where('user_sender_id',$receiver)->where('user_receiver_id',Auth::id())->get();
