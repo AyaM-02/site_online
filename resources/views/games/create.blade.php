@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('body')
-{{-- //als je een game create word je gestuurd dan zorgt ervoor dat de route de ingevulde data naar de database gaat --}}
   <form action="{{ route('games.data') }}" method="post" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2">
         @csrf
         <div class="mb-4">
