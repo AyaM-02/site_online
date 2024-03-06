@@ -18,7 +18,7 @@ class GamesController extends Controller
     }
 
     public function data(request $request)
-    {   //1
+    { 
         $data = $request->all();
         $data['user_id'] = Auth::id();
         
@@ -27,6 +27,7 @@ class GamesController extends Controller
             $request->logo_file_path->move(public_path('images'), $imageName);
             $data['logo_file_path'] = "images/" . $imageName;
         }
+        
         Game::create($data);
         return redirect()->route('games.index');
     }
@@ -48,9 +49,8 @@ class GamesController extends Controller
             $request->logo_file_path->move(public_path('images'), $imageName);
             $game->logo_file_path = "images/" . $imageName;
         }
-
+        
         $game->save();
-
         return redirect()->route('games.index');
     }
     public function delete($id)
