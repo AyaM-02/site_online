@@ -60,7 +60,6 @@
                 <h3 class="text-xl font-semibold mb-2">Private Games</h3>
                 <div class="flex flex-wrap justify-between">
                     @foreach ($games as $game)
-                        {{-- //id van de ingelogde user, moet gelijk zijn aan gameId --}}
                         @if ($game->visibility == 'private' and auth()->user()->id == $game->user_id)
                             <div class="m-4">
                                 <div class="box-content h-56 w-40 p-4 border border-purple-500 shadow-md">
